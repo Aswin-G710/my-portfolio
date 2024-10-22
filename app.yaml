@@ -1,0 +1,19 @@
+runtime: python39  # You can also use other runtimes like 'nodejs14' for a Node.js app
+
+handlers:
+  - url: /
+    static_files: index.html  # Serve index.html as the main page
+    upload: index.html
+
+  - url: /css
+    static_dir: css  # Serve all files in the css directory
+
+  - url: /js
+    static_dir: js  # Serve all files in the js directory
+
+  - url: /images
+    static_dir: images  # Serve all files in the images directory
+
+  - url: /(.*)
+    static_files: \1  # Serve any other files requested
+    upload: (.*)
